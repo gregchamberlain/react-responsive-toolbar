@@ -4,8 +4,6 @@ export default class ToolbarGroup extends Component {
 
   renderChildren = (props) => {
     return React.Children.map(props.children, child => {
-      console.log(child)
-      console.log(child.props);
       if (!child.props.highlight) {
         return React.cloneElement(child, {
           highlight: props.highlight
@@ -40,6 +38,7 @@ const getStyles = (props) => {
   return {
     container: {
       height: "100%",
+      width: props.flex ? "100%" : "auto",
       float: props.float,
       color: props.color,
     }

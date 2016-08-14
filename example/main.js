@@ -6,13 +6,14 @@ import { Toolbar, ToolbarItem, ToolbarGroup } from '../src'
 let items = [
   <ToolbarItem>Brand</ToolbarItem>,
   <ToolbarGroup float="right">
-    <ToolbarItem>Link1</ToolbarItem>
-    <ToolbarItem>Link2</ToolbarItem>
+    <ToolbarItem>Sign In</ToolbarItem>
+    <ToolbarItem>Sign Up</ToolbarItem>
+    <ToolbarItem>Sign Up</ToolbarItem>
   </ToolbarGroup>,
 ];
 
 render(
-    <Toolbar items={items} color="#b535e5">
+    <Toolbar items={items}>
       <div style={{height: 1000}}>akjldsllakdsashdjkalhaldkjadlaksdasdljkdlaskdjadshlkajsdh
       kajsdhaksjldhasdlajdjadsalksdjhasdlkjasdhalsdk
       akjsdhaslkdjahdlkajsdhalsdk

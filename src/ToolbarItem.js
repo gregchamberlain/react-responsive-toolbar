@@ -22,7 +22,8 @@ ToolbarItem.defaultProps = {
 const getStyles = (props) => {
   return {
     container: {
-      display: "inline-flex",
+      display: "flex",
+      float: "left",
       alignItems: "center",
       height: "100%",
       padding: "10px 15px",

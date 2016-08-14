@@ -4,8 +4,6 @@ export default class Toolbar extends Component {
 
   renderItems = (props) => {
     return React.Children.map(props.items, item => {
-      console.log(item)
-      console.log(item.props);
       if (!item.props.highlight) {
         return React.cloneElement(item, {
           highlight: props.highlight
@@ -19,11 +17,12 @@ export default class Toolbar extends Component {
   render() {
 
     const styles = getStyles(this.props, this.state)
+    const items = this.renderItems(this.props);
 
     return (
       <div style={styles.container}>
         <div style={styles.toolbar}>
-          {this.renderItems(this.props)}
+          {items}
         </div>
         <div style={styles.content}>
           {this.props.children}
