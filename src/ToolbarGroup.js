@@ -27,6 +27,9 @@ export default class ToolbarGroup extends Component {
 }
 
 ToolbarGroup.propTypes = {
+  background: PropTypes.string,
+  color: PropTypes.string,
+  highlight: PropTypes.string,
   float: PropTypes.string,
 }
 
@@ -41,6 +44,7 @@ const getStyles = (props) => {
       width: props.flex ? "100%" : "auto",
       float: props.float,
       color: props.color,
+      background: props.background
     }
   }
 }

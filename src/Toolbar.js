@@ -32,10 +32,19 @@ export default class Toolbar extends Component {
   }
 }
 
+Toolbar.propTypes = {
+  background: PropTypes.string,
+  color: PropTypes.string,
+  fixed: PropTypes.bool,
+  highlight: PropTypes.string,
+  sidebarIcon: PropTypes.bool,
+}
+
 Toolbar.defaultProps = {
   background: "#444",
   fixed: true,
   color: "#eee",
+  sidebarIcon: false,
 };
 
 const getStyles = (props, state) => {
@@ -52,6 +61,7 @@ const getStyles = (props, state) => {
       height: 56,
       background: props.background,
       color: props.color,
+      paddingLeft: props.sidebarIcon ? 56 : 0,
     },
     content: {
       position: "absolute",

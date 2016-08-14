@@ -14,9 +14,11 @@ class ToolbarItem extends Component {
   }
 }
 
-ToolbarItem.defaultProps = {
-  // highlight: "rgba(255, 255, 255, .2)",
-  color: null,
+ToolbarItem.propTypes = {
+  color: PropTypes.string,
+  background: PropTypes.string,
+  highlight: PropTypes.string,
+  href: PropTypes.string,
 }
 
 const getStyles = (props) => {
@@ -28,6 +30,7 @@ const getStyles = (props) => {
       height: "100%",
       padding: "10px 15px",
       boxSizing: "border-box",
+      background: props.background,
       cursor: "pointer",
       color: props.color,
       ':hover': {
