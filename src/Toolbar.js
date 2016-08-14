@@ -1,6 +1,21 @@
 import React, { Component, PropTypes } from 'react'
 
 export default class Toolbar extends Component {
+
+  renderItems = (props) => {
+    return React.Children.map(props.items, item => {
+      console.log(item)
+      console.log(item.props);
+      if (!item.props.highlight) {
+        return React.cloneElement(item, {
+          highlight: props.highlight
+        })
+      } else {
+        return item
+      }
+    })
+  }
+
   render() {
 
     const styles = getStyles(this.props, this.state)
@@ -8,7 +23,7 @@ export default class Toolbar extends Component {
     return (
       <div style={styles.container}>
         <div style={styles.toolbar}>
-          {this.props.items}
+          {this.renderItems(this.props)}
         </div>
         <div style={styles.content}>
           {this.props.children}
@@ -17,6 +32,12 @@ export default class Toolbar extends Component {
     );
   }
 }
+
+Toolbar.defaultProps = {
+  background: "#444",
+  fixed: true,
+  color: "#eee",
+};
 
 const getStyles = (props, state) => {
   return {
@@ -30,7 +51,8 @@ const getStyles = (props, state) => {
     },
     toolbar: {
       height: 56,
-      background: "#b535e5",
+      background: props.background,
+      color: props.color,
     },
     content: {
       position: "absolute",
@@ -42,7 +64,3 @@ const getStyles = (props, state) => {
     }
   }
 }
-
-Toolbar.defaultProps = {
-  fixed: true,
-};

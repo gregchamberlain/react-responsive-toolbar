@@ -14,19 +14,23 @@ class ToolbarItem extends Component {
   }
 }
 
+ToolbarItem.defaultProps = {
+  // highlight: "rgba(255, 255, 255, .2)",
+  color: null,
+}
+
 const getStyles = (props) => {
   return {
     container: {
       display: "inline-flex",
       alignItems: "center",
       height: "100%",
-      color: "#ccc",
       padding: "10px 15px",
       boxSizing: "border-box",
       cursor: "pointer",
+      color: props.color,
       ':hover': {
-        background: "rgba(255, 255, 255, .1)",
-        color: "#eee",
+        background: props.highlight ? props.highlight : "rgba(255, 255, 255, .2)",
       },
     }
   }
